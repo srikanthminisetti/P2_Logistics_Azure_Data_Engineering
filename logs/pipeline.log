@@ -1,0 +1,434 @@
+2026-11-15 06:07:41,472 | INFO    | generate_data | wrote customers                        303 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/customers.csv
+2026-11-15 06:07:41,474 | INFO    | generate_data | wrote warehouses                        13 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/warehouses.csv
+2026-11-15 06:07:41,474 | INFO    | generate_data | wrote transportation_partners            9 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/transportation_partners.csv
+2026-11-15 06:07:41,508 | INFO    | generate_data | wrote shipments                      12144 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/shipments.csv
+2026-11-15 06:07:41,603 | INFO    | generate_data | wrote shipment_tracking_events       79070 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/shipment_tracking_events.csv
+2026-11-15 06:07:41,614 | INFO    | generate_data | wrote inventory                       5806 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/inventory.csv
+2026-11-15 06:09:03,880 | INFO    | bronze_ingestion | Starting Bronze ingestion, batch_id=20261115T060903Z
+2026-11-15 06:09:03,899 | INFO    | bronze_ingestion | bronze  customers                    rows=303     cols=14
+2026-11-15 06:09:03,904 | INFO    | bronze_ingestion | bronze  warehouses                   rows=13      cols=14
+2026-11-15 06:09:03,907 | INFO    | bronze_ingestion | bronze  transportation_partners      rows=9       cols=14
+2026-11-15 06:09:04,484 | INFO    | bronze_ingestion | bronze  shipments                    rows=12144   cols=21
+2026-11-15 06:09:07,002 | INFO    | bronze_ingestion | bronze  shipment_tracking_events     rows=79070   cols=13
+2026-11-15 06:09:07,195 | INFO    | bronze_ingestion | bronze  inventory                    rows=5806    cols=15
+2026-11-15 06:09:07,271 | INFO    | silver_cleaning |   customers                  rule DUPLICATE_CUSTOMER_ID        rejected=3
+2026-11-15 06:09:07,285 | INFO    | silver_cleaning |   warehouses                 rule DUPLICATE_WAREHOUSE_ID       rejected=1
+2026-11-15 06:09:07,295 | INFO    | silver_cleaning |   transportation_partners    rule DUPLICATE_PARTNER_ID         rejected=1
+2026-11-15 06:09:07,404 | INFO    | silver_cleaning |   shipments                  rule DUPLICATE_SHIPMENT_ID        rejected=144
+2026-11-15 06:09:07,411 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIPMENT_STATUS      rejected=48
+2026-11-15 06:09:07,417 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIP_OR_PROMISED_DATE rejected=36
+2026-11-15 06:09:07,423 | INFO    | silver_cleaning |   shipments                  rule MISSING_WAREHOUSE_ID         rejected=59
+2026-11-15 06:09:07,431 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_WAREHOUSE_ID          rejected=36
+2026-11-15 06:09:07,437 | INFO    | silver_cleaning |   shipments                  rule MISSING_CUSTOMER_ID          rejected=22
+2026-11-15 06:09:07,444 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_CUSTOMER_ID           rejected=36
+2026-11-15 06:09:07,450 | INFO    | silver_cleaning |   shipments                  rule DELIVERY_BEFORE_SHIPMENT     rejected=60
+2026-11-15 06:09:07,456 | INFO    | silver_cleaning |   shipments                  rule MISSING_DELIVERY_DATE_FOR_DELIVERED rejected=36
+2026-11-15 06:09:07,810 | INFO    | silver_cleaning |   shipment_tracking_events   rule DUPLICATE_EVENT_ID           rejected=782
+2026-11-15 06:09:07,834 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TYPE           rejected=156
+2026-11-15 06:09:07,852 | INFO    | silver_cleaning |   shipment_tracking_events   rule MISSING_EVENT_TIMESTAMP      rejected=390
+2026-11-15 06:09:07,869 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TIMESTAMP      rejected=232
+2026-11-15 06:09:07,895 | INFO    | silver_cleaning |   shipment_tracking_events   rule ORPHAN_SHIPMENT_ID           rejected=2473
+2026-11-15 06:09:07,992 | INFO    | silver_cleaning |   inventory                  rule DUPLICATE_INVENTORY_ID       rejected=46
+2026-11-15 06:09:07,996 | INFO    | silver_cleaning |   inventory                  rule MISSING_WAREHOUSE_ID         rejected=12
+2026-11-15 06:09:08,000 | INFO    | silver_cleaning |   inventory                  rule ORPHAN_WAREHOUSE_ID          rejected=18
+2026-11-15 06:09:08,003 | INFO    | silver_cleaning |   inventory                  rule INVALID_SNAPSHOT_DATE        rejected=11
+2026-11-15 06:09:08,007 | INFO    | silver_cleaning |   inventory                  rule MISSING_QUANTITY             rejected=27
+2026-11-15 06:09:08,010 | INFO    | silver_cleaning |   inventory                  rule NEGATIVE_QUANTITY            rejected=17
+2026-11-15 06:09:08,017 | INFO    | silver_cleaning | silver  customers                    bronze=303     clean=300    
+2026-11-15 06:09:08,017 | INFO    | silver_cleaning | silver  warehouses                   bronze=13      clean=12     
+2026-11-15 06:09:08,017 | INFO    | silver_cleaning | silver  transportation_partners      bronze=9       clean=8      
+2026-11-15 06:09:08,017 | INFO    | silver_cleaning | silver  shipments                    bronze=12144   clean=11667  
+2026-11-15 06:09:08,017 | INFO    | silver_cleaning | silver  shipment_tracking_events     bronze=79070   clean=75037  
+2026-11-15 06:09:08,017 | INFO    | silver_cleaning | silver  inventory                    bronze=5806    clean=5675   
+2026-11-15 06:09:58,373 | INFO    | silver_cleaning |   customers                  rule DUPLICATE_CUSTOMER_ID        rejected=3
+2026-11-15 06:09:58,385 | INFO    | silver_cleaning |   warehouses                 rule DUPLICATE_WAREHOUSE_ID       rejected=1
+2026-11-15 06:09:58,395 | INFO    | silver_cleaning |   transportation_partners    rule DUPLICATE_PARTNER_ID         rejected=1
+2026-11-15 06:09:58,499 | INFO    | silver_cleaning |   shipments                  rule DUPLICATE_SHIPMENT_ID        rejected=144
+2026-11-15 06:09:58,523 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIPMENT_STATUS      rejected=48
+2026-11-15 06:09:58,530 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIP_OR_PROMISED_DATE rejected=36
+2026-11-15 06:09:58,537 | INFO    | silver_cleaning |   shipments                  rule MISSING_WAREHOUSE_ID         rejected=59
+2026-11-15 06:09:58,543 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_WAREHOUSE_ID          rejected=36
+2026-11-15 06:09:58,549 | INFO    | silver_cleaning |   shipments                  rule MISSING_CUSTOMER_ID          rejected=22
+2026-11-15 06:09:58,555 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_CUSTOMER_ID           rejected=36
+2026-11-15 06:09:58,561 | INFO    | silver_cleaning |   shipments                  rule DELIVERY_BEFORE_SHIPMENT     rejected=60
+2026-11-15 06:09:58,566 | INFO    | silver_cleaning |   shipments                  rule MISSING_DELIVERY_DATE_FOR_DELIVERED rejected=36
+2026-11-15 06:09:58,911 | INFO    | silver_cleaning |   shipment_tracking_events   rule DUPLICATE_EVENT_ID           rejected=782
+2026-11-15 06:09:58,933 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TYPE           rejected=156
+2026-11-15 06:09:58,951 | INFO    | silver_cleaning |   shipment_tracking_events   rule MISSING_EVENT_TIMESTAMP      rejected=390
+2026-11-15 06:09:58,967 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TIMESTAMP      rejected=232
+2026-11-15 06:09:58,991 | INFO    | silver_cleaning |   shipment_tracking_events   rule ORPHAN_SHIPMENT_ID           rejected=2473
+2026-11-15 06:09:59,093 | INFO    | silver_cleaning |   inventory                  rule DUPLICATE_INVENTORY_ID       rejected=46
+2026-11-15 06:09:59,098 | INFO    | silver_cleaning |   inventory                  rule MISSING_WAREHOUSE_ID         rejected=12
+2026-11-15 06:09:59,104 | INFO    | silver_cleaning |   inventory                  rule ORPHAN_WAREHOUSE_ID          rejected=18
+2026-11-15 06:09:59,108 | INFO    | silver_cleaning |   inventory                  rule INVALID_SNAPSHOT_DATE        rejected=11
+2026-11-15 06:09:59,113 | INFO    | silver_cleaning |   inventory                  rule MISSING_QUANTITY             rejected=27
+2026-11-15 06:09:59,118 | INFO    | silver_cleaning |   inventory                  rule NEGATIVE_QUANTITY            rejected=17
+2026-11-15 06:09:59,125 | INFO    | silver_cleaning | silver  customers                    bronze=303     clean=300    
+2026-11-15 06:09:59,125 | INFO    | silver_cleaning | silver  warehouses                   bronze=13      clean=12     
+2026-11-15 06:09:59,125 | INFO    | silver_cleaning | silver  transportation_partners      bronze=9       clean=8      
+2026-11-15 06:09:59,126 | INFO    | silver_cleaning | silver  shipments                    bronze=12144   clean=11667  
+2026-11-15 06:09:59,126 | INFO    | silver_cleaning | silver  shipment_tracking_events     bronze=79070   clean=75037  
+2026-11-15 06:09:59,126 | INFO    | silver_cleaning | silver  inventory                    bronze=5806    clean=5675   
+2026-11-15 06:09:59,209 | INFO    | shipment_transformation | shipment_enriched rows=11667 cols=40
+2026-11-15 06:09:59,223 | INFO    | inventory_transformation | inventory_enriched rows=5675 low_stock_rows=1807
+2026-11-15 06:09:59,365 | INFO    | gold_analytics | gold    gold_kpi_summary                     rows=16
+2026-11-15 06:09:59,366 | INFO    | gold_analytics | gold    gold_shipment_performance_summary    rows=12
+2026-11-15 06:09:59,366 | INFO    | gold_analytics | gold    gold_delivery_delay_analysis         rows=21
+2026-11-15 06:09:59,366 | INFO    | gold_analytics | gold    gold_customer_delay_analysis         rows=300
+2026-11-15 06:09:59,366 | INFO    | gold_analytics | gold    gold_warehouse_inventory_summary     rows=12
+2026-11-15 06:09:59,366 | INFO    | gold_analytics | gold    gold_partner_performance             rows=8
+2026-11-15 06:09:59,366 | INFO    | gold_analytics | gold    gold_monthly_cost_analysis           rows=12
+2026-11-15 06:09:59,366 | INFO    | gold_analytics | gold    gold_route_performance               rows=276
+2026-11-15 06:11:18,876 | INFO    | run_pipeline | === Pipeline run 20261115T061118Z started (LOCAL simulation) ===
+2026-11-15 06:11:18,876 | INFO    | bronze_ingestion | Starting Bronze ingestion, batch_id=20261115T061118Z
+2026-11-15 06:11:18,894 | INFO    | bronze_ingestion | bronze  customers                    rows=303     cols=14
+2026-11-15 06:11:18,899 | INFO    | bronze_ingestion | bronze  warehouses                   rows=13      cols=14
+2026-11-15 06:11:18,920 | INFO    | bronze_ingestion | bronze  transportation_partners      rows=9       cols=14
+2026-11-15 06:11:19,437 | INFO    | bronze_ingestion | bronze  shipments                    rows=12144   cols=21
+2026-11-15 06:11:22,027 | INFO    | bronze_ingestion | bronze  shipment_tracking_events     rows=79070   cols=13
+2026-11-15 06:11:22,200 | INFO    | bronze_ingestion | bronze  inventory                    rows=5806    cols=15
+2026-11-15 06:11:22,200 | INFO    | run_pipeline | stage bronze                     SUCCEEDED (attempt 1, 3.3s)
+2026-11-15 06:11:22,212 | INFO    | silver_cleaning |   customers                  rule DUPLICATE_CUSTOMER_ID        rejected=3
+2026-11-15 06:11:22,221 | INFO    | silver_cleaning |   warehouses                 rule DUPLICATE_WAREHOUSE_ID       rejected=1
+2026-11-15 06:11:22,228 | INFO    | silver_cleaning |   transportation_partners    rule DUPLICATE_PARTNER_ID         rejected=1
+2026-11-15 06:11:22,358 | INFO    | silver_cleaning |   shipments                  rule DUPLICATE_SHIPMENT_ID        rejected=144
+2026-11-15 06:11:22,368 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIPMENT_STATUS      rejected=48
+2026-11-15 06:11:22,376 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIP_OR_PROMISED_DATE rejected=36
+2026-11-15 06:11:22,384 | INFO    | silver_cleaning |   shipments                  rule MISSING_WAREHOUSE_ID         rejected=59
+2026-11-15 06:11:22,393 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_WAREHOUSE_ID          rejected=36
+2026-11-15 06:11:22,400 | INFO    | silver_cleaning |   shipments                  rule MISSING_CUSTOMER_ID          rejected=22
+2026-11-15 06:11:22,408 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_CUSTOMER_ID           rejected=36
+2026-11-15 06:11:22,416 | INFO    | silver_cleaning |   shipments                  rule DELIVERY_BEFORE_SHIPMENT     rejected=60
+2026-11-15 06:11:22,424 | INFO    | silver_cleaning |   shipments                  rule MISSING_DELIVERY_DATE_FOR_DELIVERED rejected=36
+2026-11-15 06:11:22,752 | INFO    | silver_cleaning |   shipment_tracking_events   rule DUPLICATE_EVENT_ID           rejected=782
+2026-11-15 06:11:22,770 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TYPE           rejected=156
+2026-11-15 06:11:22,785 | INFO    | silver_cleaning |   shipment_tracking_events   rule MISSING_EVENT_TIMESTAMP      rejected=390
+2026-11-15 06:11:22,800 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TIMESTAMP      rejected=232
+2026-11-15 06:11:22,819 | INFO    | silver_cleaning |   shipment_tracking_events   rule ORPHAN_SHIPMENT_ID           rejected=2473
+2026-11-15 06:11:22,893 | INFO    | silver_cleaning |   inventory                  rule DUPLICATE_INVENTORY_ID       rejected=46
+2026-11-15 06:11:22,896 | INFO    | silver_cleaning |   inventory                  rule MISSING_WAREHOUSE_ID         rejected=12
+2026-11-15 06:11:22,899 | INFO    | silver_cleaning |   inventory                  rule ORPHAN_WAREHOUSE_ID          rejected=18
+2026-11-15 06:11:22,902 | INFO    | silver_cleaning |   inventory                  rule INVALID_SNAPSHOT_DATE        rejected=11
+2026-11-15 06:11:22,904 | INFO    | silver_cleaning |   inventory                  rule MISSING_QUANTITY             rejected=27
+2026-11-15 06:11:22,907 | INFO    | silver_cleaning |   inventory                  rule NEGATIVE_QUANTITY            rejected=17
+2026-11-15 06:11:22,912 | INFO    | silver_cleaning | silver  customers                    bronze=303     clean=300    
+2026-11-15 06:11:22,912 | INFO    | silver_cleaning | silver  warehouses                   bronze=13      clean=12     
+2026-11-15 06:11:22,912 | INFO    | silver_cleaning | silver  transportation_partners      bronze=9       clean=8      
+2026-11-15 06:11:22,912 | INFO    | silver_cleaning | silver  shipments                    bronze=12144   clean=11667  
+2026-11-15 06:11:22,912 | INFO    | silver_cleaning | silver  shipment_tracking_events     bronze=79070   clean=75037  
+2026-11-15 06:11:22,912 | INFO    | silver_cleaning | silver  inventory                    bronze=5806    clean=5675   
+2026-11-15 06:11:23,101 | INFO    | run_pipeline | stage silver                     SUCCEEDED (attempt 1, 0.9s)
+2026-11-15 06:11:23,158 | INFO    | shipment_transformation | shipment_enriched rows=11667 cols=40
+2026-11-15 06:11:23,265 | INFO    | run_pipeline | stage shipment_transformation    SUCCEEDED (attempt 1, 0.2s)
+2026-11-15 06:11:23,275 | INFO    | inventory_transformation | inventory_enriched rows=5675 low_stock_rows=1807
+2026-11-15 06:11:23,302 | INFO    | run_pipeline | stage inventory_transformation   SUCCEEDED (attempt 1, 0.0s)
+2026-11-15 06:11:23,414 | INFO    | gold_analytics | gold    gold_kpi_summary                     rows=16
+2026-11-15 06:11:23,414 | INFO    | gold_analytics | gold    gold_shipment_performance_summary    rows=12
+2026-11-15 06:11:23,414 | INFO    | gold_analytics | gold    gold_delivery_delay_analysis         rows=21
+2026-11-15 06:11:23,414 | INFO    | gold_analytics | gold    gold_customer_delay_analysis         rows=300
+2026-11-15 06:11:23,414 | INFO    | gold_analytics | gold    gold_warehouse_inventory_summary     rows=12
+2026-11-15 06:11:23,414 | INFO    | gold_analytics | gold    gold_partner_performance             rows=8
+2026-11-15 06:11:23,414 | INFO    | gold_analytics | gold    gold_monthly_cost_analysis           rows=12
+2026-11-15 06:11:23,414 | INFO    | gold_analytics | gold    gold_route_performance               rows=276
+2026-11-15 06:11:23,420 | INFO    | run_pipeline | stage gold                       SUCCEEDED (attempt 1, 0.1s)
+2026-11-15 06:11:24,033 | INFO    | run_pipeline | stage data_quality               SUCCEEDED (attempt 1, 0.6s)
+2026-11-15 06:11:24,514 | INFO    | charts | chart saved: 01_shipment_status_distribution.png
+2026-11-15 06:11:24,674 | INFO    | charts | chart saved: 02_monthly_shipments_on_time.png
+2026-11-15 06:11:24,768 | INFO    | charts | chart saved: 03_partner_delay_rate.png
+2026-11-15 06:11:24,851 | INFO    | charts | chart saved: 04_delay_reasons.png
+2026-11-15 06:11:24,990 | INFO    | charts | chart saved: 05_top_delayed_routes.png
+2026-11-15 06:11:25,120 | INFO    | charts | chart saved: 06_top_customers_delays.png
+2026-11-15 06:11:25,352 | INFO    | charts | chart saved: 07_warehouse_inventory.png
+2026-11-15 06:11:25,523 | INFO    | charts | chart saved: 08_monthly_transport_cost.png
+2026-11-15 06:11:25,533 | INFO    | run_pipeline | stage reports                    SUCCEEDED (attempt 1, 1.5s)
+2026-11-15 06:11:25,535 | INFO    | run_pipeline | === Pipeline run 20261115T061118Z SUCCEEDED ===
+2026-11-15 11:57:47,715 | INFO    | generate_data | wrote customers                        303 rows -> /tmp/tmpu8v03hod/customers.csv
+2026-11-15 11:57:47,716 | INFO    | generate_data | wrote warehouses                        13 rows -> /tmp/tmpu8v03hod/warehouses.csv
+2026-11-15 11:57:47,716 | INFO    | generate_data | wrote transportation_partners            9 rows -> /tmp/tmpu8v03hod/transportation_partners.csv
+2026-11-15 11:57:47,718 | INFO    | generate_data | wrote shipments                        303 rows -> /tmp/tmpu8v03hod/shipments.csv
+2026-11-15 11:57:47,721 | INFO    | generate_data | wrote shipment_tracking_events        1931 rows -> /tmp/tmpu8v03hod/shipment_tracking_events.csv
+2026-11-15 11:57:47,734 | INFO    | generate_data | wrote inventory                       5806 rows -> /tmp/tmpu8v03hod/inventory.csv
+2026-11-15 11:57:47,888 | INFO    | generate_data | wrote customers                        303 rows -> /tmp/tmp1tuns627/customers.csv
+2026-11-15 11:57:47,889 | INFO    | generate_data | wrote warehouses                        13 rows -> /tmp/tmp1tuns627/warehouses.csv
+2026-11-15 11:57:47,890 | INFO    | generate_data | wrote transportation_partners            9 rows -> /tmp/tmp1tuns627/transportation_partners.csv
+2026-11-15 11:57:47,891 | INFO    | generate_data | wrote shipments                        303 rows -> /tmp/tmp1tuns627/shipments.csv
+2026-11-15 11:57:47,894 | INFO    | generate_data | wrote shipment_tracking_events        1931 rows -> /tmp/tmp1tuns627/shipment_tracking_events.csv
+2026-11-15 11:57:47,908 | INFO    | generate_data | wrote inventory                       5806 rows -> /tmp/tmp1tuns627/inventory.csv
+2026-11-15 11:57:47,989 | INFO    | silver_cleaning |   shipment_tracking_events   rule DUPLICATE_EVENT_ID           rejected=1
+2026-11-15 11:57:47,991 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TYPE           rejected=1
+2026-11-15 11:57:47,994 | INFO    | silver_cleaning |   shipment_tracking_events   rule MISSING_EVENT_TIMESTAMP      rejected=1
+2026-11-15 11:57:47,996 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TIMESTAMP      rejected=1
+2026-11-15 11:57:47,998 | INFO    | silver_cleaning |   shipment_tracking_events   rule ORPHAN_SHIPMENT_ID           rejected=1
+2026-11-15 11:57:48,088 | INFO    | silver_cleaning |   inventory                  rule DUPLICATE_INVENTORY_ID       rejected=1
+2026-11-15 11:57:48,093 | INFO    | silver_cleaning |   inventory                  rule MISSING_WAREHOUSE_ID         rejected=1
+2026-11-15 11:57:48,096 | INFO    | silver_cleaning |   inventory                  rule ORPHAN_WAREHOUSE_ID          rejected=1
+2026-11-15 11:57:48,100 | INFO    | silver_cleaning |   inventory                  rule INVALID_SNAPSHOT_DATE        rejected=1
+2026-11-15 11:57:48,103 | INFO    | silver_cleaning |   inventory                  rule MISSING_QUANTITY             rejected=1
+2026-11-15 11:57:48,106 | INFO    | silver_cleaning |   inventory                  rule NEGATIVE_QUANTITY            rejected=1
+2026-11-15 11:57:48,265 | INFO    | silver_cleaning |   shipments                  rule DUPLICATE_SHIPMENT_ID        rejected=1
+2026-11-15 11:57:48,268 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIPMENT_STATUS      rejected=1
+2026-11-15 11:57:48,271 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIP_OR_PROMISED_DATE rejected=1
+2026-11-15 11:57:48,274 | INFO    | silver_cleaning |   shipments                  rule MISSING_WAREHOUSE_ID         rejected=1
+2026-11-15 11:57:48,277 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_WAREHOUSE_ID          rejected=1
+2026-11-15 11:57:48,281 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_CUSTOMER_ID           rejected=1
+2026-11-15 11:57:48,284 | INFO    | silver_cleaning |   shipments                  rule DELIVERY_BEFORE_SHIPMENT     rejected=1
+2026-11-15 11:57:48,288 | INFO    | silver_cleaning |   shipments                  rule MISSING_DELIVERY_DATE_FOR_DELIVERED rejected=1
+2026-11-15 11:57:54,129 | INFO    | run_pipeline | === Pipeline run 20261115T115754Z started (LOCAL simulation) ===
+2026-11-15 11:57:57,366 | INFO    | generate_data | wrote customers                        303 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/customers.csv
+2026-11-15 11:57:57,367 | INFO    | generate_data | wrote warehouses                        13 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/warehouses.csv
+2026-11-15 11:57:57,368 | INFO    | generate_data | wrote transportation_partners            9 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/transportation_partners.csv
+2026-11-15 11:57:57,414 | INFO    | generate_data | wrote shipments                      12144 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/shipments.csv
+2026-11-15 11:57:57,563 | INFO    | generate_data | wrote shipment_tracking_events       79070 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/shipment_tracking_events.csv
+2026-11-15 11:57:57,578 | INFO    | generate_data | wrote inventory                       5806 rows -> /home/claude/P2_Logistics_Azure_Data_Engineering/data/raw/inventory.csv
+2026-11-15 11:57:57,598 | INFO    | run_pipeline | stage generate                   SUCCEEDED (attempt 1, 3.5s)
+2026-11-15 11:57:57,598 | INFO    | bronze_ingestion | Starting Bronze ingestion, batch_id=20261115T115757Z
+2026-11-15 11:57:57,614 | INFO    | bronze_ingestion | bronze  customers                    rows=303     cols=14
+2026-11-15 11:57:57,619 | INFO    | bronze_ingestion | bronze  warehouses                   rows=13      cols=14
+2026-11-15 11:57:57,624 | INFO    | bronze_ingestion | bronze  transportation_partners      rows=9       cols=14
+2026-11-15 11:57:58,169 | INFO    | bronze_ingestion | bronze  shipments                    rows=12144   cols=21
+2026-11-15 11:58:01,193 | INFO    | bronze_ingestion | bronze  shipment_tracking_events     rows=79070   cols=13
+2026-11-15 11:58:01,436 | INFO    | bronze_ingestion | bronze  inventory                    rows=5806    cols=15
+2026-11-15 11:58:01,436 | INFO    | run_pipeline | stage bronze                     SUCCEEDED (attempt 1, 3.8s)
+2026-11-15 11:58:01,449 | INFO    | silver_cleaning |   customers                  rule DUPLICATE_CUSTOMER_ID        rejected=3
+2026-11-15 11:58:01,462 | INFO    | silver_cleaning |   warehouses                 rule DUPLICATE_WAREHOUSE_ID       rejected=1
+2026-11-15 11:58:01,473 | INFO    | silver_cleaning |   transportation_partners    rule DUPLICATE_PARTNER_ID         rejected=1
+2026-11-15 11:58:01,599 | INFO    | silver_cleaning |   shipments                  rule DUPLICATE_SHIPMENT_ID        rejected=144
+2026-11-15 11:58:01,605 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIPMENT_STATUS      rejected=48
+2026-11-15 11:58:01,612 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIP_OR_PROMISED_DATE rejected=36
+2026-11-15 11:58:01,618 | INFO    | silver_cleaning |   shipments                  rule MISSING_WAREHOUSE_ID         rejected=59
+2026-11-15 11:58:01,625 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_WAREHOUSE_ID          rejected=36
+2026-11-15 11:58:01,631 | INFO    | silver_cleaning |   shipments                  rule MISSING_CUSTOMER_ID          rejected=22
+2026-11-15 11:58:01,637 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_CUSTOMER_ID           rejected=36
+2026-11-15 11:58:01,643 | INFO    | silver_cleaning |   shipments                  rule DELIVERY_BEFORE_SHIPMENT     rejected=60
+2026-11-15 11:58:01,649 | INFO    | silver_cleaning |   shipments                  rule MISSING_DELIVERY_DATE_FOR_DELIVERED rejected=36
+2026-11-15 11:58:02,044 | INFO    | silver_cleaning |   shipment_tracking_events   rule DUPLICATE_EVENT_ID           rejected=782
+2026-11-15 11:58:02,072 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TYPE           rejected=156
+2026-11-15 11:58:02,091 | INFO    | silver_cleaning |   shipment_tracking_events   rule MISSING_EVENT_TIMESTAMP      rejected=390
+2026-11-15 11:58:02,109 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TIMESTAMP      rejected=232
+2026-11-15 11:58:02,136 | INFO    | silver_cleaning |   shipment_tracking_events   rule ORPHAN_SHIPMENT_ID           rejected=2473
+2026-11-15 11:58:02,237 | INFO    | silver_cleaning |   inventory                  rule DUPLICATE_INVENTORY_ID       rejected=46
+2026-11-15 11:58:02,240 | INFO    | silver_cleaning |   inventory                  rule MISSING_WAREHOUSE_ID         rejected=12
+2026-11-15 11:58:02,244 | INFO    | silver_cleaning |   inventory                  rule ORPHAN_WAREHOUSE_ID          rejected=18
+2026-11-15 11:58:02,247 | INFO    | silver_cleaning |   inventory                  rule INVALID_SNAPSHOT_DATE        rejected=11
+2026-11-15 11:58:02,250 | INFO    | silver_cleaning |   inventory                  rule MISSING_QUANTITY             rejected=27
+2026-11-15 11:58:02,254 | INFO    | silver_cleaning |   inventory                  rule NEGATIVE_QUANTITY            rejected=17
+2026-11-15 11:58:02,265 | INFO    | silver_cleaning | silver  customers                    bronze=303     clean=300    
+2026-11-15 11:58:02,265 | INFO    | silver_cleaning | silver  warehouses                   bronze=13      clean=12     
+2026-11-15 11:58:02,265 | INFO    | silver_cleaning | silver  transportation_partners      bronze=9       clean=8      
+2026-11-15 11:58:02,265 | INFO    | silver_cleaning | silver  shipments                    bronze=12144   clean=11667  
+2026-11-15 11:58:02,265 | INFO    | silver_cleaning | silver  shipment_tracking_events     bronze=79070   clean=75037  
+2026-11-15 11:58:02,265 | INFO    | silver_cleaning | silver  inventory                    bronze=5806    clean=5675   
+2026-11-15 11:58:02,563 | INFO    | run_pipeline | stage silver                     SUCCEEDED (attempt 1, 1.1s)
+2026-11-15 11:58:02,673 | INFO    | shipment_transformation | shipment_enriched rows=11667 cols=40
+2026-11-15 11:58:02,882 | INFO    | run_pipeline | stage shipment_transformation    SUCCEEDED (attempt 1, 0.3s)
+2026-11-15 11:58:02,898 | INFO    | inventory_transformation | inventory_enriched rows=5675 low_stock_rows=1807
+2026-11-15 11:58:02,948 | INFO    | run_pipeline | stage inventory_transformation   SUCCEEDED (attempt 1, 0.1s)
+2026-11-15 11:58:03,146 | INFO    | gold_analytics | gold    gold_kpi_summary                     rows=16
+2026-11-15 11:58:03,146 | INFO    | gold_analytics | gold    gold_shipment_performance_summary    rows=12
+2026-11-15 11:58:03,146 | INFO    | gold_analytics | gold    gold_delivery_delay_analysis         rows=21
+2026-11-15 11:58:03,146 | INFO    | gold_analytics | gold    gold_customer_delay_analysis         rows=300
+2026-11-15 11:58:03,146 | INFO    | gold_analytics | gold    gold_warehouse_inventory_summary     rows=12
+2026-11-15 11:58:03,146 | INFO    | gold_analytics | gold    gold_partner_performance             rows=8
+2026-11-15 11:58:03,146 | INFO    | gold_analytics | gold    gold_monthly_cost_analysis           rows=12
+2026-11-15 11:58:03,146 | INFO    | gold_analytics | gold    gold_route_performance               rows=276
+2026-11-15 11:58:03,162 | INFO    | run_pipeline | stage gold                       SUCCEEDED (attempt 1, 0.2s)
+2026-11-15 11:58:04,048 | INFO    | run_pipeline | stage data_quality               SUCCEEDED (attempt 1, 0.9s)
+2026-11-15 11:58:04,636 | INFO    | charts | chart saved: 01_shipment_status_distribution.png
+2026-11-15 11:58:04,894 | INFO    | charts | chart saved: 02_monthly_shipments_on_time.png
+2026-11-15 11:58:05,085 | INFO    | charts | chart saved: 03_partner_delay_rate.png
+2026-11-15 11:58:05,248 | INFO    | charts | chart saved: 04_delay_reasons.png
+2026-11-15 11:58:05,404 | INFO    | charts | chart saved: 05_top_delayed_routes.png
+2026-11-15 11:58:05,541 | INFO    | charts | chart saved: 06_top_customers_delays.png
+2026-11-15 11:58:05,785 | INFO    | charts | chart saved: 07_warehouse_inventory.png
+2026-11-15 11:58:05,957 | INFO    | charts | chart saved: 08_monthly_transport_cost.png
+2026-11-15 11:58:05,966 | INFO    | run_pipeline | stage reports                    SUCCEEDED (attempt 1, 1.9s)
+2026-11-15 11:58:05,968 | INFO    | run_pipeline | === Pipeline run 20261115T115754Z SUCCEEDED ===
+2026-11-15 11:58:08,525 | INFO    | generate_data | wrote customers                        303 rows -> /tmp/tmp5sppo5kp/customers.csv
+2026-11-15 11:58:08,526 | INFO    | generate_data | wrote warehouses                        13 rows -> /tmp/tmp5sppo5kp/warehouses.csv
+2026-11-15 11:58:08,526 | INFO    | generate_data | wrote transportation_partners            9 rows -> /tmp/tmp5sppo5kp/transportation_partners.csv
+2026-11-15 11:58:08,528 | INFO    | generate_data | wrote shipments                        303 rows -> /tmp/tmp5sppo5kp/shipments.csv
+2026-11-15 11:58:08,531 | INFO    | generate_data | wrote shipment_tracking_events        1931 rows -> /tmp/tmp5sppo5kp/shipment_tracking_events.csv
+2026-11-15 11:58:08,546 | INFO    | generate_data | wrote inventory                       5806 rows -> /tmp/tmp5sppo5kp/inventory.csv
+2026-11-15 11:58:08,715 | INFO    | generate_data | wrote customers                        303 rows -> /tmp/tmpa7ydylxr/customers.csv
+2026-11-15 11:58:08,716 | INFO    | generate_data | wrote warehouses                        13 rows -> /tmp/tmpa7ydylxr/warehouses.csv
+2026-11-15 11:58:08,717 | INFO    | generate_data | wrote transportation_partners            9 rows -> /tmp/tmpa7ydylxr/transportation_partners.csv
+2026-11-15 11:58:08,719 | INFO    | generate_data | wrote shipments                        303 rows -> /tmp/tmpa7ydylxr/shipments.csv
+2026-11-15 11:58:08,724 | INFO    | generate_data | wrote shipment_tracking_events        1931 rows -> /tmp/tmpa7ydylxr/shipment_tracking_events.csv
+2026-11-15 11:58:08,741 | INFO    | generate_data | wrote inventory                       5806 rows -> /tmp/tmpa7ydylxr/inventory.csv
+2026-11-15 11:58:08,820 | INFO    | silver_cleaning |   shipment_tracking_events   rule DUPLICATE_EVENT_ID           rejected=1
+2026-11-15 11:58:08,823 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TYPE           rejected=1
+2026-11-15 11:58:08,825 | INFO    | silver_cleaning |   shipment_tracking_events   rule MISSING_EVENT_TIMESTAMP      rejected=1
+2026-11-15 11:58:08,827 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TIMESTAMP      rejected=1
+2026-11-15 11:58:08,830 | INFO    | silver_cleaning |   shipment_tracking_events   rule ORPHAN_SHIPMENT_ID           rejected=1
+2026-11-15 11:58:08,938 | INFO    | silver_cleaning |   inventory                  rule DUPLICATE_INVENTORY_ID       rejected=1
+2026-11-15 11:58:08,942 | INFO    | silver_cleaning |   inventory                  rule MISSING_WAREHOUSE_ID         rejected=1
+2026-11-15 11:58:08,945 | INFO    | silver_cleaning |   inventory                  rule ORPHAN_WAREHOUSE_ID          rejected=1
+2026-11-15 11:58:08,948 | INFO    | silver_cleaning |   inventory                  rule INVALID_SNAPSHOT_DATE        rejected=1
+2026-11-15 11:58:08,951 | INFO    | silver_cleaning |   inventory                  rule MISSING_QUANTITY             rejected=1
+2026-11-15 11:58:08,954 | INFO    | silver_cleaning |   inventory                  rule NEGATIVE_QUANTITY            rejected=1
+2026-11-15 11:58:09,094 | INFO    | silver_cleaning |   shipments                  rule DUPLICATE_SHIPMENT_ID        rejected=1
+2026-11-15 11:58:09,097 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIPMENT_STATUS      rejected=1
+2026-11-15 11:58:09,100 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIP_OR_PROMISED_DATE rejected=1
+2026-11-15 11:58:09,103 | INFO    | silver_cleaning |   shipments                  rule MISSING_WAREHOUSE_ID         rejected=1
+2026-11-15 11:58:09,106 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_WAREHOUSE_ID          rejected=1
+2026-11-15 11:58:09,109 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_CUSTOMER_ID           rejected=1
+2026-11-15 11:58:09,113 | INFO    | silver_cleaning |   shipments                  rule DELIVERY_BEFORE_SHIPMENT     rejected=1
+2026-11-15 11:58:09,117 | INFO    | silver_cleaning |   shipments                  rule MISSING_DELIVERY_DATE_FOR_DELIVERED rejected=1
+2026-11-15 11:58:20,229 | INFO    | run_pipeline | === Pipeline run 20261115T115820Z started (LOCAL simulation) ===
+2026-11-15 11:58:20,229 | INFO    | bronze_ingestion | Starting Bronze ingestion, batch_id=20261115T115820Z
+2026-11-15 11:58:20,269 | INFO    | bronze_ingestion | bronze  customers                    rows=303     cols=14
+2026-11-15 11:58:20,275 | INFO    | bronze_ingestion | bronze  warehouses                   rows=13      cols=14
+2026-11-15 11:58:20,280 | INFO    | bronze_ingestion | bronze  transportation_partners      rows=9       cols=14
+2026-11-15 11:58:20,952 | INFO    | bronze_ingestion | bronze  shipments                    rows=12144   cols=21
+2026-11-15 11:58:24,051 | INFO    | bronze_ingestion | bronze  shipment_tracking_events     rows=79070   cols=13
+2026-11-15 11:58:24,304 | INFO    | bronze_ingestion | bronze  inventory                    rows=5806    cols=15
+2026-11-15 11:58:24,305 | INFO    | run_pipeline | stage bronze                     SUCCEEDED (attempt 1, 4.1s)
+2026-11-15 11:58:24,305 | ERROR   | run_pipeline | stage silver                     FAILED attempt 1: Simulated transient failure in stage 'silver'
+2026-11-15 11:58:24,523 | INFO    | silver_cleaning |   customers                  rule DUPLICATE_CUSTOMER_ID        rejected=3
+2026-11-15 11:58:24,542 | INFO    | silver_cleaning |   warehouses                 rule DUPLICATE_WAREHOUSE_ID       rejected=1
+2026-11-15 11:58:24,557 | INFO    | silver_cleaning |   transportation_partners    rule DUPLICATE_PARTNER_ID         rejected=1
+2026-11-15 11:58:24,700 | INFO    | silver_cleaning |   shipments                  rule DUPLICATE_SHIPMENT_ID        rejected=144
+2026-11-15 11:58:24,708 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIPMENT_STATUS      rejected=48
+2026-11-15 11:58:24,715 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIP_OR_PROMISED_DATE rejected=36
+2026-11-15 11:58:24,722 | INFO    | silver_cleaning |   shipments                  rule MISSING_WAREHOUSE_ID         rejected=59
+2026-11-15 11:58:24,728 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_WAREHOUSE_ID          rejected=36
+2026-11-15 11:58:24,735 | INFO    | silver_cleaning |   shipments                  rule MISSING_CUSTOMER_ID          rejected=22
+2026-11-15 11:58:24,741 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_CUSTOMER_ID           rejected=36
+2026-11-15 11:58:24,749 | INFO    | silver_cleaning |   shipments                  rule DELIVERY_BEFORE_SHIPMENT     rejected=60
+2026-11-15 11:58:24,757 | INFO    | silver_cleaning |   shipments                  rule MISSING_DELIVERY_DATE_FOR_DELIVERED rejected=36
+2026-11-15 11:58:25,143 | INFO    | silver_cleaning |   shipment_tracking_events   rule DUPLICATE_EVENT_ID           rejected=782
+2026-11-15 11:58:25,167 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TYPE           rejected=156
+2026-11-15 11:58:25,186 | INFO    | silver_cleaning |   shipment_tracking_events   rule MISSING_EVENT_TIMESTAMP      rejected=390
+2026-11-15 11:58:25,204 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TIMESTAMP      rejected=232
+2026-11-15 11:58:25,230 | INFO    | silver_cleaning |   shipment_tracking_events   rule ORPHAN_SHIPMENT_ID           rejected=2473
+2026-11-15 11:58:25,354 | INFO    | silver_cleaning |   inventory                  rule DUPLICATE_INVENTORY_ID       rejected=46
+2026-11-15 11:58:25,360 | INFO    | silver_cleaning |   inventory                  rule MISSING_WAREHOUSE_ID         rejected=12
+2026-11-15 11:58:25,366 | INFO    | silver_cleaning |   inventory                  rule ORPHAN_WAREHOUSE_ID          rejected=18
+2026-11-15 11:58:25,371 | INFO    | silver_cleaning |   inventory                  rule INVALID_SNAPSHOT_DATE        rejected=11
+2026-11-15 11:58:25,376 | INFO    | silver_cleaning |   inventory                  rule MISSING_QUANTITY             rejected=27
+2026-11-15 11:58:25,380 | INFO    | silver_cleaning |   inventory                  rule NEGATIVE_QUANTITY            rejected=17
+2026-11-15 11:58:25,389 | INFO    | silver_cleaning | silver  customers                    bronze=303     clean=300    
+2026-11-15 11:58:25,390 | INFO    | silver_cleaning | silver  warehouses                   bronze=13      clean=12     
+2026-11-15 11:58:25,390 | INFO    | silver_cleaning | silver  transportation_partners      bronze=9       clean=8      
+2026-11-15 11:58:25,390 | INFO    | silver_cleaning | silver  shipments                    bronze=12144   clean=11667  
+2026-11-15 11:58:25,390 | INFO    | silver_cleaning | silver  shipment_tracking_events     bronze=79070   clean=75037  
+2026-11-15 11:58:25,390 | INFO    | silver_cleaning | silver  inventory                    bronze=5806    clean=5675   
+2026-11-15 11:58:25,725 | INFO    | run_pipeline | stage silver                     SUCCEEDED (attempt 2, 1.4s)
+2026-11-15 11:58:25,807 | INFO    | shipment_transformation | shipment_enriched rows=11667 cols=40
+2026-11-15 11:58:25,935 | INFO    | run_pipeline | stage shipment_transformation    SUCCEEDED (attempt 1, 0.2s)
+2026-11-15 11:58:25,948 | INFO    | inventory_transformation | inventory_enriched rows=5675 low_stock_rows=1807
+2026-11-15 11:58:25,979 | INFO    | run_pipeline | stage inventory_transformation   SUCCEEDED (attempt 1, 0.0s)
+2026-11-15 11:58:26,123 | INFO    | gold_analytics | gold    gold_kpi_summary                     rows=16
+2026-11-15 11:58:26,124 | INFO    | gold_analytics | gold    gold_shipment_performance_summary    rows=12
+2026-11-15 11:58:26,124 | INFO    | gold_analytics | gold    gold_delivery_delay_analysis         rows=21
+2026-11-15 11:58:26,124 | INFO    | gold_analytics | gold    gold_customer_delay_analysis         rows=300
+2026-11-15 11:58:26,124 | INFO    | gold_analytics | gold    gold_warehouse_inventory_summary     rows=12
+2026-11-15 11:58:26,124 | INFO    | gold_analytics | gold    gold_partner_performance             rows=8
+2026-11-15 11:58:26,124 | INFO    | gold_analytics | gold    gold_monthly_cost_analysis           rows=12
+2026-11-15 11:58:26,124 | INFO    | gold_analytics | gold    gold_route_performance               rows=276
+2026-11-15 11:58:26,136 | INFO    | run_pipeline | stage gold                       SUCCEEDED (attempt 1, 0.2s)
+2026-11-15 11:58:27,174 | INFO    | run_pipeline | stage data_quality               SUCCEEDED (attempt 1, 1.0s)
+2026-11-15 11:58:27,653 | INFO    | charts | chart saved: 01_shipment_status_distribution.png
+2026-11-15 11:58:27,858 | INFO    | charts | chart saved: 02_monthly_shipments_on_time.png
+2026-11-15 11:58:27,990 | INFO    | charts | chart saved: 03_partner_delay_rate.png
+2026-11-15 11:58:28,099 | INFO    | charts | chart saved: 04_delay_reasons.png
+2026-11-15 11:58:28,248 | INFO    | charts | chart saved: 05_top_delayed_routes.png
+2026-11-15 11:58:28,399 | INFO    | charts | chart saved: 06_top_customers_delays.png
+2026-11-15 11:58:28,663 | INFO    | charts | chart saved: 07_warehouse_inventory.png
+2026-11-15 11:58:28,854 | INFO    | charts | chart saved: 08_monthly_transport_cost.png
+2026-11-15 11:58:28,867 | INFO    | run_pipeline | stage reports                    SUCCEEDED (attempt 1, 1.7s)
+2026-11-15 11:58:28,869 | INFO    | run_pipeline | === Pipeline run 20261115T115820Z SUCCEEDED ===
+2026-11-15 11:58:29,263 | INFO    | run_pipeline | === Pipeline run 20261115T115829Z started (LOCAL simulation) ===
+2026-11-15 11:58:29,263 | INFO    | bronze_ingestion | Starting Bronze ingestion, batch_id=20261115T115829Z
+2026-11-15 11:58:29,294 | INFO    | bronze_ingestion | bronze  customers                    rows=303     cols=14
+2026-11-15 11:58:29,299 | INFO    | bronze_ingestion | bronze  warehouses                   rows=13      cols=14
+2026-11-15 11:58:29,305 | INFO    | bronze_ingestion | bronze  transportation_partners      rows=9       cols=14
+2026-11-15 11:58:29,897 | INFO    | bronze_ingestion | bronze  shipments                    rows=12144   cols=21
+2026-11-15 11:58:32,888 | INFO    | bronze_ingestion | bronze  shipment_tracking_events     rows=79070   cols=13
+2026-11-15 11:58:33,110 | INFO    | bronze_ingestion | bronze  inventory                    rows=5806    cols=15
+2026-11-15 11:58:33,111 | INFO    | run_pipeline | stage bronze                     SUCCEEDED (attempt 1, 3.8s)
+2026-11-15 11:58:33,125 | INFO    | silver_cleaning |   customers                  rule DUPLICATE_CUSTOMER_ID        rejected=3
+2026-11-15 11:58:33,139 | INFO    | silver_cleaning |   warehouses                 rule DUPLICATE_WAREHOUSE_ID       rejected=1
+2026-11-15 11:58:33,149 | INFO    | silver_cleaning |   transportation_partners    rule DUPLICATE_PARTNER_ID         rejected=1
+2026-11-15 11:58:33,276 | INFO    | silver_cleaning |   shipments                  rule DUPLICATE_SHIPMENT_ID        rejected=144
+2026-11-15 11:58:33,284 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIPMENT_STATUS      rejected=48
+2026-11-15 11:58:33,292 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIP_OR_PROMISED_DATE rejected=36
+2026-11-15 11:58:33,298 | INFO    | silver_cleaning |   shipments                  rule MISSING_WAREHOUSE_ID         rejected=59
+2026-11-15 11:58:33,305 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_WAREHOUSE_ID          rejected=36
+2026-11-15 11:58:33,311 | INFO    | silver_cleaning |   shipments                  rule MISSING_CUSTOMER_ID          rejected=22
+2026-11-15 11:58:33,317 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_CUSTOMER_ID           rejected=36
+2026-11-15 11:58:33,324 | INFO    | silver_cleaning |   shipments                  rule DELIVERY_BEFORE_SHIPMENT     rejected=60
+2026-11-15 11:58:33,331 | INFO    | silver_cleaning |   shipments                  rule MISSING_DELIVERY_DATE_FOR_DELIVERED rejected=36
+2026-11-15 11:58:33,726 | INFO    | silver_cleaning |   shipment_tracking_events   rule DUPLICATE_EVENT_ID           rejected=782
+2026-11-15 11:58:33,750 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TYPE           rejected=156
+2026-11-15 11:58:33,771 | INFO    | silver_cleaning |   shipment_tracking_events   rule MISSING_EVENT_TIMESTAMP      rejected=390
+2026-11-15 11:58:33,790 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TIMESTAMP      rejected=232
+2026-11-15 11:58:33,819 | INFO    | silver_cleaning |   shipment_tracking_events   rule ORPHAN_SHIPMENT_ID           rejected=2473
+2026-11-15 11:58:33,925 | INFO    | silver_cleaning |   inventory                  rule DUPLICATE_INVENTORY_ID       rejected=46
+2026-11-15 11:58:33,929 | INFO    | silver_cleaning |   inventory                  rule MISSING_WAREHOUSE_ID         rejected=12
+2026-11-15 11:58:33,932 | INFO    | silver_cleaning |   inventory                  rule ORPHAN_WAREHOUSE_ID          rejected=18
+2026-11-15 11:58:33,936 | INFO    | silver_cleaning |   inventory                  rule INVALID_SNAPSHOT_DATE        rejected=11
+2026-11-15 11:58:33,940 | INFO    | silver_cleaning |   inventory                  rule MISSING_QUANTITY             rejected=27
+2026-11-15 11:58:33,943 | INFO    | silver_cleaning |   inventory                  rule NEGATIVE_QUANTITY            rejected=17
+2026-11-15 11:58:33,949 | INFO    | silver_cleaning | silver  customers                    bronze=303     clean=300    
+2026-11-15 11:58:33,949 | INFO    | silver_cleaning | silver  warehouses                   bronze=13      clean=12     
+2026-11-15 11:58:33,949 | INFO    | silver_cleaning | silver  transportation_partners      bronze=9       clean=8      
+2026-11-15 11:58:33,949 | INFO    | silver_cleaning | silver  shipments                    bronze=12144   clean=11667  
+2026-11-15 11:58:33,949 | INFO    | silver_cleaning | silver  shipment_tracking_events     bronze=79070   clean=75037  
+2026-11-15 11:58:33,949 | INFO    | silver_cleaning | silver  inventory                    bronze=5806    clean=5675   
+2026-11-15 11:58:34,226 | INFO    | run_pipeline | stage silver                     SUCCEEDED (attempt 1, 1.1s)
+2026-11-15 11:58:34,301 | INFO    | shipment_transformation | shipment_enriched rows=11667 cols=40
+2026-11-15 11:58:34,421 | INFO    | run_pipeline | stage shipment_transformation    SUCCEEDED (attempt 1, 0.2s)
+2026-11-15 11:58:34,433 | INFO    | inventory_transformation | inventory_enriched rows=5675 low_stock_rows=1807
+2026-11-15 11:58:34,462 | INFO    | run_pipeline | stage inventory_transformation   SUCCEEDED (attempt 1, 0.0s)
+2026-11-15 11:58:34,603 | INFO    | gold_analytics | gold    gold_kpi_summary                     rows=16
+2026-11-15 11:58:34,604 | INFO    | gold_analytics | gold    gold_shipment_performance_summary    rows=12
+2026-11-15 11:58:34,604 | INFO    | gold_analytics | gold    gold_delivery_delay_analysis         rows=21
+2026-11-15 11:58:34,604 | INFO    | gold_analytics | gold    gold_customer_delay_analysis         rows=300
+2026-11-15 11:58:34,604 | INFO    | gold_analytics | gold    gold_warehouse_inventory_summary     rows=12
+2026-11-15 11:58:34,604 | INFO    | gold_analytics | gold    gold_partner_performance             rows=8
+2026-11-15 11:58:34,604 | INFO    | gold_analytics | gold    gold_monthly_cost_analysis           rows=12
+2026-11-15 11:58:34,604 | INFO    | gold_analytics | gold    gold_route_performance               rows=276
+2026-11-15 11:58:34,614 | INFO    | run_pipeline | stage gold                       SUCCEEDED (attempt 1, 0.2s)
+2026-11-15 11:58:35,572 | INFO    | run_pipeline | stage data_quality               SUCCEEDED (attempt 1, 1.0s)
+2026-11-15 11:58:35,994 | INFO    | charts | chart saved: 01_shipment_status_distribution.png
+2026-11-15 11:58:36,197 | INFO    | charts | chart saved: 02_monthly_shipments_on_time.png
+2026-11-15 11:58:36,321 | INFO    | charts | chart saved: 03_partner_delay_rate.png
+2026-11-15 11:58:36,429 | INFO    | charts | chart saved: 04_delay_reasons.png
+2026-11-15 11:58:36,576 | INFO    | charts | chart saved: 05_top_delayed_routes.png
+2026-11-15 11:58:36,718 | INFO    | charts | chart saved: 06_top_customers_delays.png
+2026-11-15 11:58:36,970 | INFO    | charts | chart saved: 07_warehouse_inventory.png
+2026-11-15 11:58:37,133 | INFO    | charts | chart saved: 08_monthly_transport_cost.png
+2026-11-15 11:58:37,142 | INFO    | run_pipeline | stage reports                    SUCCEEDED (attempt 1, 1.6s)
+2026-11-15 11:58:37,144 | INFO    | run_pipeline | === Pipeline run 20261115T115829Z SUCCEEDED ===
+2026-11-15 12:01:02,588 | INFO    | generate_data | wrote customers                        303 rows -> /tmp/tmpyckem52t/customers.csv
+2026-11-15 12:01:02,589 | INFO    | generate_data | wrote warehouses                        13 rows -> /tmp/tmpyckem52t/warehouses.csv
+2026-11-15 12:01:02,590 | INFO    | generate_data | wrote transportation_partners            9 rows -> /tmp/tmpyckem52t/transportation_partners.csv
+2026-11-15 12:01:02,591 | INFO    | generate_data | wrote shipments                        303 rows -> /tmp/tmpyckem52t/shipments.csv
+2026-11-15 12:01:02,594 | INFO    | generate_data | wrote shipment_tracking_events        1931 rows -> /tmp/tmpyckem52t/shipment_tracking_events.csv
+2026-11-15 12:01:02,607 | INFO    | generate_data | wrote inventory                       5806 rows -> /tmp/tmpyckem52t/inventory.csv
+2026-11-15 12:01:02,771 | INFO    | generate_data | wrote customers                        303 rows -> /tmp/tmprl8t6un5/customers.csv
+2026-11-15 12:01:02,772 | INFO    | generate_data | wrote warehouses                        13 rows -> /tmp/tmprl8t6un5/warehouses.csv
+2026-11-15 12:01:02,773 | INFO    | generate_data | wrote transportation_partners            9 rows -> /tmp/tmprl8t6un5/transportation_partners.csv
+2026-11-15 12:01:02,774 | INFO    | generate_data | wrote shipments                        303 rows -> /tmp/tmprl8t6un5/shipments.csv
+2026-11-15 12:01:02,778 | INFO    | generate_data | wrote shipment_tracking_events        1931 rows -> /tmp/tmprl8t6un5/shipment_tracking_events.csv
+2026-11-15 12:01:02,792 | INFO    | generate_data | wrote inventory                       5806 rows -> /tmp/tmprl8t6un5/inventory.csv
+2026-11-15 12:01:02,857 | INFO    | silver_cleaning |   shipment_tracking_events   rule DUPLICATE_EVENT_ID           rejected=1
+2026-11-15 12:01:02,860 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TYPE           rejected=1
+2026-11-15 12:01:02,862 | INFO    | silver_cleaning |   shipment_tracking_events   rule MISSING_EVENT_TIMESTAMP      rejected=1
+2026-11-15 12:01:02,865 | INFO    | silver_cleaning |   shipment_tracking_events   rule INVALID_EVENT_TIMESTAMP      rejected=1
+2026-11-15 12:01:02,867 | INFO    | silver_cleaning |   shipment_tracking_events   rule ORPHAN_SHIPMENT_ID           rejected=1
+2026-11-15 12:01:02,968 | INFO    | silver_cleaning |   inventory                  rule DUPLICATE_INVENTORY_ID       rejected=1
+2026-11-15 12:01:02,972 | INFO    | silver_cleaning |   inventory                  rule MISSING_WAREHOUSE_ID         rejected=1
+2026-11-15 12:01:02,976 | INFO    | silver_cleaning |   inventory                  rule ORPHAN_WAREHOUSE_ID          rejected=1
+2026-11-15 12:01:02,980 | INFO    | silver_cleaning |   inventory                  rule INVALID_SNAPSHOT_DATE        rejected=1
+2026-11-15 12:01:02,984 | INFO    | silver_cleaning |   inventory                  rule MISSING_QUANTITY             rejected=1
+2026-11-15 12:01:02,986 | INFO    | silver_cleaning |   inventory                  rule NEGATIVE_QUANTITY            rejected=1
+2026-11-15 12:01:03,196 | INFO    | silver_cleaning |   shipments                  rule DUPLICATE_SHIPMENT_ID        rejected=1
+2026-11-15 12:01:03,200 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIPMENT_STATUS      rejected=1
+2026-11-15 12:01:03,206 | INFO    | silver_cleaning |   shipments                  rule INVALID_SHIP_OR_PROMISED_DATE rejected=1
+2026-11-15 12:01:03,211 | INFO    | silver_cleaning |   shipments                  rule MISSING_WAREHOUSE_ID         rejected=1
+2026-11-15 12:01:03,215 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_WAREHOUSE_ID          rejected=1
+2026-11-15 12:01:03,219 | INFO    | silver_cleaning |   shipments                  rule ORPHAN_CUSTOMER_ID           rejected=1
+2026-11-15 12:01:03,224 | INFO    | silver_cleaning |   shipments                  rule DELIVERY_BEFORE_SHIPMENT     rejected=1
+2026-11-15 12:01:03,229 | INFO    | silver_cleaning |   shipments                  rule MISSING_DELIVERY_DATE_FOR_DELIVERED rejected=1

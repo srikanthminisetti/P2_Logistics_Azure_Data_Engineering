@@ -1,0 +1,74 @@
+[
+  {
+    "run_id": "20261115T115820Z",
+    "stage": "bronze",
+    "status": "Succeeded",
+    "attempts": 1,
+    "duration_sec": 4.08,
+    "detail": "{\"customers\": 303, \"warehouses\": 13, \"transportation_partners\": 9, \"shipments\": 12144, \"shipment_tracking_events\": 79070, \"inventory\": 5806}",
+    "error": ""
+  },
+  {
+    "run_id": "20261115T115820Z",
+    "stage": "silver",
+    "status": "Retrying",
+    "attempts": 1,
+    "duration_sec": 0.2,
+    "detail": "{}",
+    "error": "Simulated transient failure in stage 'silver'"
+  },
+  {
+    "run_id": "20261115T115820Z",
+    "stage": "silver",
+    "status": "Succeeded",
+    "attempts": 2,
+    "duration_sec": 1.42,
+    "detail": "{\"customers\": 300, \"warehouses\": 12, \"transportation_partners\": 8, \"shipments\": 11667, \"shipment_tracking_events\": 75037, \"inventory\": 5675, \"rejected_records\": 4646}",
+    "error": ""
+  },
+  {
+    "run_id": "20261115T115820Z",
+    "stage": "shipment_transformation",
+    "status": "Succeeded",
+    "attempts": 1,
+    "duration_sec": 0.21,
+    "detail": "{\"shipment_enriched\": 11667}",
+    "error": ""
+  },
+  {
+    "run_id": "20261115T115820Z",
+    "stage": "inventory_transformation",
+    "status": "Succeeded",
+    "attempts": 1,
+    "duration_sec": 0.04,
+    "detail": "{\"inventory_enriched\": 5675}",
+    "error": ""
+  },
+  {
+    "run_id": "20261115T115820Z",
+    "stage": "gold",
+    "status": "Succeeded",
+    "attempts": 1,
+    "duration_sec": 0.16,
+    "detail": "{\"gold_kpi_summary\": 16, \"gold_shipment_performance_summary\": 12, \"gold_delivery_delay_analysis\": 21, \"gold_customer_delay_analysis\": 300, \"gold_warehouse_inventory_summary\": 12, \"gold_partner_performance\": 8, \"gold_monthly_cost_analysis\": 12, \"gold_route_performance\": 276}",
+    "error": ""
+  },
+  {
+    "run_id": "20261115T115820Z",
+    "stage": "data_quality",
+    "status": "Succeeded",
+    "attempts": 1,
+    "duration_sec": 1.04,
+    "detail": "{\"bronze_checks\": 45, \"silver_checks\": 45, \"silver_failed\": 0}",
+    "error": ""
+  },
+  {
+    "run_id": "20261115T115820Z",
+    "stage": "reports",
+    "status": "Succeeded",
+    "attempts": 1,
+    "duration_sec": 1.69,
+    "detail": "{}",
+    "error": ""
+  }
+]
