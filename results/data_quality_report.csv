@@ -1,0 +1,97 @@
+layer,table,check_name,column,rows_checked,rows_failed,failure_pct,severity,status,sample_values
+bronze,customers,not_null,customer_id,303,0,0.0,ERROR,PASS,
+bronze,customers,unique_key,customer_id,303,3,0.99,ERROR,FAIL,C0169; C0149; C0280
+bronze,warehouses,not_null,warehouse_id,13,0,0.0,ERROR,PASS,
+bronze,warehouses,unique_key,warehouse_id,13,1,7.692,ERROR,FAIL,WH03
+bronze,transportation_partners,not_null,partner_id,9,0,0.0,ERROR,PASS,
+bronze,transportation_partners,unique_key,partner_id,9,1,11.111,ERROR,FAIL,TP01
+bronze,shipments,not_null,shipment_id,12144,0,0.0,ERROR,PASS,
+bronze,shipments,unique_key,shipment_id,12144,144,1.186,ERROR,FAIL,SHP0003762; SHP0000854; SHP0007266
+bronze,shipment_tracking_events,not_null,event_id,79070,0,0.0,ERROR,PASS,
+bronze,shipment_tracking_events,unique_key,event_id,79070,782,0.989,ERROR,FAIL,EVT00007538; EVT00018663; EVT00035026
+bronze,inventory,not_null,inventory_id,5806,0,0.0,ERROR,PASS,
+bronze,inventory,unique_key,inventory_id,5806,46,0.792,ERROR,FAIL,INV0001324; INV0001975; INV0000522
+bronze,shipments,not_null,customer_id,12144,25,0.206,ERROR,FAIL,
+bronze,shipments,not_null,origin_warehouse_id,12144,60,0.494,ERROR,FAIL,
+bronze,shipments,not_null,partner_id,12144,0,0.0,ERROR,PASS,
+bronze,shipments,not_null,ship_date,12144,0,0.0,ERROR,PASS,
+bronze,shipments,not_null,promised_delivery_date,12144,0,0.0,ERROR,PASS,
+bronze,shipments,not_null,shipment_status,12144,0,0.0,ERROR,PASS,
+bronze,shipments,not_null,shipping_cost,12144,145,1.194,WARN,WARN,
+bronze,shipments,not_null,actual_delivery_date,12144,560,4.611,WARN,WARN,
+bronze,shipments,valid_dates,ship_date,12144,17,0.14,ERROR,FAIL,00/00/0000; N/A; 31/02/2026
+bronze,shipments,valid_dates,promised_delivery_date,12144,19,0.156,ERROR,FAIL,N/A; 2026-13-45; 00/00/0000
+bronze,shipments,valid_dates,actual_delivery_date,12144,0,0.0,ERROR,PASS,
+bronze,shipments,allowed_values,shipment_status,12144,48,0.395,ERROR,FAIL,Pending Review; N/A; Pending Review
+bronze,shipments,referential_integrity->customers,customer_id,12144,37,0.305,ERROR,FAIL,C9999; C9999; C9999
+bronze,shipments,referential_integrity->warehouses,origin_warehouse_id,12144,38,0.313,ERROR,FAIL,WH99; WH99; WH99
+bronze,shipments,referential_integrity->transportation_partners,partner_id,12144,0,0.0,ERROR,PASS,
+bronze,shipments,delivery_date_order,actual_delivery_date,12144,61,0.502,ERROR,FAIL,2026-05-18; 2025-11-10; 2026-01-01
+bronze,shipments,data_type_numeric,weight_kg,12144,39,0.321,ERROR,FAIL,unknown; N/A; unknown
+bronze,shipments,data_type_numeric,distance_km,12144,0,0.0,ERROR,PASS,
+bronze,shipments,data_type_numeric,shipping_cost,12144,0,0.0,ERROR,PASS,
+bronze,shipments,non_negative,shipping_cost,12144,25,0.206,ERROR,FAIL,-604.77; -661.7; -1607.9
+bronze,shipment_tracking_events,not_null,event_timestamp,79070,392,0.496,ERROR,FAIL,
+bronze,shipment_tracking_events,valid_dates,event_timestamp,79070,237,0.3,ERROR,FAIL,2026-99-99 25:61:00; 2026-99-99 25:61:00; 2026-99-99 25:61:00
+bronze,shipment_tracking_events,allowed_values,event_type,79070,156,0.197,ERROR,FAIL,unknown; REROUTE??; REROUTE??
+bronze,shipment_tracking_events,referential_integrity->shipments,shipment_id,79070,316,0.4,ERROR,FAIL,SHP0950918; SHP0926516; SHP0965594
+bronze,inventory,not_null,warehouse_id,5806,12,0.207,ERROR,FAIL,
+bronze,inventory,not_null,quantity_on_hand,5806,29,0.499,ERROR,FAIL,
+bronze,inventory,non_negative,quantity_on_hand,5806,19,0.327,ERROR,FAIL,-16; -16; -18
+bronze,inventory,valid_dates,snapshot_date,5806,12,0.207,ERROR,FAIL,N/A; N/A; N/A
+bronze,inventory,referential_integrity->warehouses,warehouse_id,5806,18,0.31,ERROR,FAIL,WH99; WH99; WH99
+bronze,inventory,data_type_numeric,quantity_on_hand,5806,0,0.0,ERROR,PASS,
+bronze,customers,not_null,email,303,9,2.97,WARN,WARN,
+bronze,warehouses,not_null,manager_name,13,1,7.692,WARN,WARN,
+bronze,transportation_partners,not_null,contact_email,9,1,11.111,WARN,WARN,
+silver,customers,not_null,customer_id,300,0,0.0,ERROR,PASS,
+silver,customers,unique_key,customer_id,300,0,0.0,ERROR,PASS,
+silver,warehouses,not_null,warehouse_id,12,0,0.0,ERROR,PASS,
+silver,warehouses,unique_key,warehouse_id,12,0,0.0,ERROR,PASS,
+silver,transportation_partners,not_null,partner_id,8,0,0.0,ERROR,PASS,
+silver,transportation_partners,unique_key,partner_id,8,0,0.0,ERROR,PASS,
+silver,shipments,not_null,shipment_id,11667,0,0.0,ERROR,PASS,
+silver,shipments,unique_key,shipment_id,11667,0,0.0,ERROR,PASS,
+silver,shipment_tracking_events,not_null,event_id,75037,0,0.0,ERROR,PASS,
+silver,shipment_tracking_events,unique_key,event_id,75037,0,0.0,ERROR,PASS,
+silver,inventory,not_null,inventory_id,5675,0,0.0,ERROR,PASS,
+silver,inventory,unique_key,inventory_id,5675,0,0.0,ERROR,PASS,
+silver,shipments,not_null,customer_id,11667,0,0.0,ERROR,PASS,
+silver,shipments,not_null,origin_warehouse_id,11667,0,0.0,ERROR,PASS,
+silver,shipments,not_null,partner_id,11667,0,0.0,ERROR,PASS,
+silver,shipments,not_null,ship_date,11667,0,0.0,ERROR,PASS,
+silver,shipments,not_null,promised_delivery_date,11667,0,0.0,ERROR,PASS,
+silver,shipments,not_null,shipment_status,11667,0,0.0,ERROR,PASS,
+silver,shipments,not_null,shipping_cost,11667,0,0.0,WARN,PASS,
+silver,shipments,not_null,actual_delivery_date,11667,503,4.311,WARN,WARN,
+silver,shipments,valid_dates,ship_date,11667,0,0.0,ERROR,PASS,
+silver,shipments,valid_dates,promised_delivery_date,11667,0,0.0,ERROR,PASS,
+silver,shipments,valid_dates,actual_delivery_date,11667,0,0.0,ERROR,PASS,
+silver,shipments,allowed_values,shipment_status,11667,0,0.0,ERROR,PASS,
+silver,shipments,referential_integrity->customers,customer_id,11667,0,0.0,ERROR,PASS,
+silver,shipments,referential_integrity->warehouses,origin_warehouse_id,11667,0,0.0,ERROR,PASS,
+silver,shipments,referential_integrity->transportation_partners,partner_id,11667,0,0.0,ERROR,PASS,
+silver,shipments,delivery_date_order,actual_delivery_date,11667,0,0.0,ERROR,PASS,
+silver,shipments,data_type_numeric,weight_kg,11667,0,0.0,ERROR,PASS,
+silver,shipments,data_type_numeric,distance_km,11667,0,0.0,ERROR,PASS,
+silver,shipments,data_type_numeric,shipping_cost,11667,0,0.0,ERROR,PASS,
+silver,shipments,non_negative,shipping_cost,11667,0,0.0,ERROR,PASS,
+silver,shipment_tracking_events,not_null,event_timestamp,75037,0,0.0,ERROR,PASS,
+silver,shipment_tracking_events,valid_dates,event_timestamp,75037,0,0.0,ERROR,PASS,
+silver,shipment_tracking_events,allowed_values,event_type,75037,0,0.0,ERROR,PASS,
+silver,shipment_tracking_events,referential_integrity->shipments,shipment_id,75037,0,0.0,ERROR,PASS,
+silver,inventory,not_null,warehouse_id,5675,0,0.0,ERROR,PASS,
+silver,inventory,not_null,quantity_on_hand,5675,0,0.0,ERROR,PASS,
+silver,inventory,non_negative,quantity_on_hand,5675,0,0.0,ERROR,PASS,
+silver,inventory,valid_dates,snapshot_date,5675,0,0.0,ERROR,PASS,
+silver,inventory,referential_integrity->warehouses,warehouse_id,5675,0,0.0,ERROR,PASS,
+silver,inventory,data_type_numeric,quantity_on_hand,5675,0,0.0,ERROR,PASS,
+silver,customers,not_null,email,300,13,4.333,WARN,WARN,
+silver,warehouses,not_null,manager_name,12,0,0.0,WARN,PASS,
+silver,transportation_partners,not_null,contact_email,8,0,0.0,WARN,PASS,
+reconciliation,customers,bronze=silver+rejected,*,303,0,0.0,ERROR,PASS,bronze=303; silver=300; rejected=3
+reconciliation,warehouses,bronze=silver+rejected,*,13,0,0.0,ERROR,PASS,bronze=13; silver=12; rejected=1
+reconciliation,transportation_partners,bronze=silver+rejected,*,9,0,0.0,ERROR,PASS,bronze=9; silver=8; rejected=1
+reconciliation,shipments,bronze=silver+rejected,*,12144,0,0.0,ERROR,PASS,bronze=12144; silver=11667; rejected=477
+reconciliation,shipment_tracking_events,bronze=silver+rejected,*,79070,0,0.0,ERROR,PASS,bronze=79070; silver=75037; rejected=4033
+reconciliation,inventory,bronze=silver+rejected,*,5806,0,0.0,ERROR,PASS,bronze=5806; silver=5675; rejected=131

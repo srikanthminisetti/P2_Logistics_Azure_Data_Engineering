@@ -1,0 +1,13 @@
+table,column,missing_count,missing_pct
+customers,email,9,2.97
+warehouses,manager_name,1,7.69
+transportation_partners,contact_email,1,11.11
+shipments,actual_delivery_date,560,4.61
+shipments,shipping_cost,145,1.19
+shipments,origin_warehouse_id,60,0.49
+shipments,customer_id,25,0.21
+shipment_tracking_events,remarks,76417,96.64
+shipment_tracking_events,warehouse_id,66592,84.22
+shipment_tracking_events,event_timestamp,392,0.5
+inventory,quantity_on_hand,29,0.5
+inventory,warehouse_id,12,0.21

@@ -1,0 +1,17 @@
+business_question_no,metric,value,unit,description
+1,total_shipments,11667.0,count,What is the total number of shipments?
+2,shipments_delivered_on_time,8958.0,count,Delivered / delayed / in transit / cancelled
+2,shipments_delayed,2206.0,count,Delivered / delayed / in transit / cancelled
+2,shipments_in_transit,159.0,count,Delivered / delayed / in transit / cancelled
+2,shipments_cancelled,344.0,count,Delivered / delayed / in transit / cancelled
+3,highest_delay_rate_partner_pct,32.09,percent,Highest delay rate: SwiftHaul Logistics (TP02)
+4,avg_delivery_days,5.16,days,Average delivery time (ship to delivery)
+5,low_stock_skus_latest_snapshot,161.0,count,SKU-warehouse positions at/below reorder level
+5,warehouses_needing_replenishment,4.0,count,Warehouses with >=40% SKUs low
+6,on_time_delivery_pct,80.24,percent,Delivered on time / all completed deliveries
+7,highest_delay_route_delayed_shipments,26.0,count,Most delays: route WH01-SFO (Chicago -> San Francisco)
+8,total_transport_cost,26144273.97,USD,Sum of monthly transportation cost
+8,avg_monthly_transport_cost,2178689.5,USD,Average monthly transportation cost
+9,highest_delay_customer_delayed_shipments,16.0,count,Most delayed deliveries: Taylor Online (C0100)
+10,total_units_in_stock_latest,178567.0,units,Units on hand across all warehouses (latest snapshot)
+10,total_inventory_value_latest,38637190.18,USD,Inventory value across all warehouses (latest snapshot)

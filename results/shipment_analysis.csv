@@ -1,0 +1,46 @@
+analysis_level,dimension,total_shipments,delayed_shipments,delay_rate_pct,avg_delivery_days
+monthly,2025-07,912,168,19.24,5.18
+monthly,2025-08,901,152,17.47,5.1
+monthly,2025-09,924,163,18.36,5.12
+monthly,2025-10,925,158,17.58,5.15
+monthly,2025-11,1424,338,24.4,5.33
+monthly,2025-12,1465,346,24.13,5.38
+monthly,2026-01,887,155,18.04,5.1
+monthly,2026-02,688,131,19.52,5.15
+monthly,2026-03,923,163,18.17,5.2
+monthly,2026-04,848,147,17.75,5.13
+monthly,2026-05,892,171,19.81,5.03
+monthly,2026-06,878,114,16.36,4.7
+partner,SwiftHaul Logistics,1969,603,32.09,5.74
+partner,PrimeMove Transport,1618,402,25.89,5.97
+partner,RailConnect Cargo,1168,258,23.26,6.76
+partner,Continental Rail Services,1178,226,20.18,6.38
+partner,Metro Courier Services,1918,310,16.76,4.89
+partner,BlueLine Freight,2323,255,11.53,5.01
+partner,AeroExpress Air Cargo,695,74,11.09,1.87
+partner,SkyBridge Air Freight,798,78,10.08,1.97
+route_top25,WH01-SFO,88,26,30.59,7.82
+route_top25,WH03-PHX,55,22,41.51,7.17
+route_top25,WH04-CHI,60,19,32.2,7.19
+route_top25,WH01-PHX,80,19,24.68,6.35
+route_top25,WH02-PDX,61,18,30.51,6.53
+route_top25,WH04-MIA,71,18,26.87,8.52
+route_top25,WH01-LAX,76,18,24.66,7.32
+route_top25,WH01-MEM,79,18,23.08,3.32
+route_top25,WH03-SLC,56,17,30.91,6.8
+route_top25,WH02-PHL,65,17,27.42,5.44
+route_top25,WH01-MCO,74,17,23.61,4.93
+route_top25,WH01-DEN,87,17,20.99,4.65
+route_top25,WH04-SEA,46,16,37.21,5.33
+route_top25,WH05-PDX,47,16,36.36,9.59
+route_top25,WH05-MIA,71,16,22.54,4.85
+route_top25,WH04-ATL,62,15,25.86,7.36
+route_top25,WH02-MIA,60,15,25.42,5.22
+route_top25,WH02-SFO,66,15,25.0,6.55
+route_top25,WH05-DAL,61,15,25.0,5.68
+route_top25,WH01-SEA,67,15,24.19,6.84
+route_top25,WH02-CMH,64,15,24.19,4.39
+route_top25,WH01-EWR,68,15,22.39,3.84
+route_top25,WH04-PHL,46,14,33.33,9.21
+route_top25,WH05-SLC,51,14,29.17,7.5
+route_top25,WH05-SEA,59,14,26.92,9.27

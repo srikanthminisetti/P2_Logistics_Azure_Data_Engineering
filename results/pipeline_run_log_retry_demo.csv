@@ -1,0 +1,9 @@
+run_id,stage,status,attempts,duration_sec,detail,error
+20261115T115820Z,bronze,Succeeded,1,4.08,"{""customers"": 303, ""warehouses"": 13, ""transportation_partners"": 9, ""shipments"": 12144, ""shipment_tracking_events"": 79070, ""inventory"": 5806}",
+20261115T115820Z,silver,Retrying,1,0.2,{},Simulated transient failure in stage 'silver'
+20261115T115820Z,silver,Succeeded,2,1.42,"{""customers"": 300, ""warehouses"": 12, ""transportation_partners"": 8, ""shipments"": 11667, ""shipment_tracking_events"": 75037, ""inventory"": 5675, ""rejected_records"": 4646}",
+20261115T115820Z,shipment_transformation,Succeeded,1,0.21,"{""shipment_enriched"": 11667}",
+20261115T115820Z,inventory_transformation,Succeeded,1,0.04,"{""inventory_enriched"": 5675}",
+20261115T115820Z,gold,Succeeded,1,0.16,"{""gold_kpi_summary"": 16, ""gold_shipment_performance_summary"": 12, ""gold_delivery_delay_analysis"": 21, ""gold_customer_delay_analysis"": 300, ""gold_warehouse_inventory_summary"": 12, ""gold_partner_performance"": 8, ""gold_monthly_cost_analysis"": 12, ""gold_route_performance"": 276}",
+20261115T115820Z,data_quality,Succeeded,1,1.04,"{""bronze_checks"": 45, ""silver_checks"": 45, ""silver_failed"": 0}",
+20261115T115820Z,reports,Succeeded,1,1.69,{},

@@ -1,0 +1,13 @@
+warehouse_id,warehouse_name,city,region,capacity_units,snapshot_date,total_skus,total_units,inventory_value,low_stock_skus,critical_skus,overstock_skus,low_stock_pct,capacity_utilization_pct,stock_status,low_stock_rank
+WH05,Newark Distribution Center,Newark,Northeast,65000,2026-06-30,40,8856,2100500.99,22,9,0,55.0,13.62,Needs Replenishment,1
+WH09,Phoenix Distribution Center,Phoenix,West,74000,2026-06-30,40,10035,2137531.05,19,8,0,47.5,13.56,Needs Replenishment,2
+WH02,Dallas Distribution Center,Dallas,South,43000,2026-06-30,40,13172,3143831.52,17,5,0,42.5,30.63,Needs Replenishment,3
+WH11,Kansas City Distribution Center,Kansas City,Midwest,46000,2026-06-30,38,9918,1913662.3,16,8,0,42.11,21.56,Needs Replenishment,4
+WH06,Seattle Distribution Center,Seattle,West,112000,2026-06-30,40,18237,3980728.4,15,8,7,37.5,16.28,Watch,5
+WH07,Denver Distribution Center,Denver,West,68000,2026-06-30,40,14695,2782578.13,14,8,4,35.0,21.61,Watch,6
+WH08,Miami Distribution Center,Miami,Southeast,51000,2026-06-30,38,14642,3041580.36,13,6,4,34.21,28.71,Watch,7
+WH03,Atlanta Distribution Center,Atlanta,Southeast,59000,2026-06-30,40,17998,4038968.39,11,2,9,27.5,30.51,Watch,8
+WH12,Memphis Distribution Center,Memphis,South,108000,2026-06-30,40,18038,3796907.3,10,2,7,25.0,16.7,Watch,9
+WH01,Chicago Distribution Center,Chicago,Midwest,44000,2026-06-30,39,16221,3749427.91,9,4,8,23.08,36.87,Healthy,10
+WH10,Columbus Distribution Center,Columbus,Midwest,89000,2026-06-30,40,16822,3603633.08,9,3,7,22.5,18.9,Healthy,11
+WH04,Los Angeles Distribution Center,Los Angeles,West,48000,2026-06-30,40,19933,4347840.75,6,0,10,15.0,41.53,Healthy,12
